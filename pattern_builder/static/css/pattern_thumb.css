@@ -1,0 +1,12 @@
+.pattern_thumb {
+	width:13em;
+}
+.pattern_thumb table {
+	display: inline-block;
+}
+.pattern_thumb label {
+	vertical-align: top;
+	display: inline-block;
+	padding:0 0.2em;
+	width:8em;
+}

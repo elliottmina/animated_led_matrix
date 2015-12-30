@@ -1,0 +1,114 @@
+#sequence_editor {
+	display: inline-block;
+}
+#sequence_editor input {
+	display: block;
+	font-size: 1.2em;
+	margin-bottom:0.3em;
+	padding:0.4em;
+}
+#sequence_pattern_editor {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height:20em;
+	width:18em;
+	background-color:rgba(132, 168, 189, 1);
+	border:1px solid rgba(255, 255, 255, 0.5);
+	padding:0.2em 1em;
+	overflow: auto;
+}
+#sequence_pattern_editor:before {
+	content:"Drag patterns here!";
+	position: absolute;
+	top:50%;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+	color: rgba(0, 0, 0, 0.6);
+	margin-left:-1em;
+}
+#sequence_pattern_editor:after {
+	position: absolute;
+	top:60%;
+	width: 100%;
+	text-align: center;
+	font-family: fontawesome;
+	content: "\f00a";
+	font-size:2.5em;
+	color:rgba(0, 0, 0, 0.3);
+	margin-left:-0.5em;
+}
+#sequence_pattern_editor.drag_target {
+	box-shadow: 0 0 1.5em rgba(0, 255, 0, 1)
+}
+#sequence_pattern_editor .item {
+	padding:0.4em;
+	cursor: grab;
+	position: relative;
+}
+
+
+#sequence_pattern_editor .item {
+	background-color:rgba(154, 189, 132, 1);
+	border:1px solid rgba(199, 222, 184, 1);
+	border-bottom: none;
+	z-index: 1;
+}
+#sequence_pattern_editor .item:nth-child(even) {
+	background-color:rgb(128, 175, 127);
+	border:1px solid rgba(183, 214, 163, 1);
+	border-bottom: none;
+}
+#sequence_pattern_editor .item:last-child {
+	border-bottom:1px solid rgba(183, 214, 163, 1);
+}
+
+#sequence_pattern_editor .item.dragging {
+	background-color: rgba(0, 255, 0, 0.3);
+}
+
+#sequence_pattern_editor .drag_target.append,
+#sequence_pattern_editor .drag_target.prepend {
+	position: absolute;
+	height:50%;
+	width:100%;
+	left:0;
+	z-index: 1;
+}
+#sequence_pattern_editor .drag_target.prepend {
+	top:0;
+}
+#sequence_pattern_editor .drag_target.append {
+	bottom:0;
+}
+#sequence_pattern_editor .drag_target.append.dragover,
+#sequence_pattern_editor .drag_target.prepend.dragover {
+	background-color:rgba(255, 255, 0, 0.3);
+}
+
+#sequence_pattern_editor .item .pattern_thumb {
+	display: inline;
+}
+#sequence_pattern_editor .item button {
+	z-index: 2;
+}
+#sequence_pattern_editor .item.dragover {
+	border:1px dashed #333;
+}
+#sequence_pattern_editor .item:last-child {
+	margin-bottom:3em;
+}
+#sequence_editor_preview {
+	display: inline-block;
+}
+#sequence_editor_preview .controls {
+	text-align: right;
+	margin-top: 0.2em;
+}
+#sequence_editor_preview .controls button {
+	margin-left: 0.2em;
+}
+#sequence_editor_preview .controls .active {
+	background-color: rgb(232, 139, 46);
+}

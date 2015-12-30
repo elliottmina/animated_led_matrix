@@ -1,0 +1,20 @@
+.container>.header:before {
+	font-family: fontawesome;
+	margin-left: -0.2em;
+	margin-bottom: 0.4em;
+	display: inline-block;
+}
+#sequence_container.container>.header:before {
+	content: "\f008";
+}
+#pattern_container.container>.header:before {
+	content: "\f00a";
+}
+#pattern_container .header {
+	background-color:rgb(154, 189, 132);
+    border: 1px solid rgb(199, 222, 184);
+}
+#sequence_container .header {
+	background-color:rgb(132, 168, 189);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}

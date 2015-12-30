@@ -1,0 +1,26 @@
+.pattern_table {
+	border-top:1px solid rgba(0, 0, 0, 0.4);
+	border-left:1px solid rgba(0, 0, 0, 0.4);
+	position: relative;
+}
+.pattern_table td {
+	height:30px;
+	width:30px;
+	border-right: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.pattern_table.mini {
+	border:1px solid #333;
+}
+.pattern_table.mini td {
+	height:3px;
+	width:3px;
+	border:none;
+}
+.pattern_table.preview {
+	border:1px solid rgba(0, 0, 0, 0.8);
+}
+.pattern_table.preview td {
+	height:16px;
+	width:16px;
+}

@@ -1,0 +1,52 @@
+.item_list {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin-right:1em;
+}
+.item_list .item {
+	min-height: 2em;
+	display: inline-block;
+	position: relative;
+}
+.item_list .button_container {
+	display: inline-block;
+}
+.item_list .content_container {
+	display: inline-block;
+	width:13em;
+}
+.item_list .item button {
+	vertical-align: top;
+	float:right;
+}
+.item_list .item:hover {
+	background-color: #FFD27F;
+}
+.item_list .item.selected {
+	background-color: rgba(255, 165, 0, 0.8);
+}
+.item_list .items {
+	height:20em;
+	overflow: auto;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+	background-color:rgba(255, 255, 255, 0.2);
+	margin-bottom: 0.5em;
+	padding-left:0.3em;
+	border:1px solid rgba(255, 255, 255, 0.3);
+}
+.item_list .item {
+	padding:0.4em;	
+	border-bottom: 1px solid #DDD;
+	cursor: pointer;
+}
+.item_list .item.selected {
+	background-color: rgb(255, 255, 120);
+	box-shadow: inset 0 0 1em rgba(255, 255, 255, 0.5);
+	border:1px solid rgb(255, 255, 255);
+}
+.item_list input {
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}

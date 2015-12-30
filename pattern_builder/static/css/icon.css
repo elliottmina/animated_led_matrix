@@ -1,0 +1,20 @@
+.icon:before {
+	font-family: fontawesome;
+}
+.icon.text:before {
+	margin-right:0.4em;
+}
+.icon.bare {
+	border:0;
+	background-color: transparent;
+	padding:0;
+}
+.icon.add:before {content:"\f067"; }
+.icon.copy:before {content:"\f0c5"; }
+.icon.delete:before {content:"\f014"; }
+.icon.left_control:before { content:"\f0d9"; }
+.icon.down_control:before { content:"\f0d7"; }
+.icon.right_control:before { content:"\f0da"; }
+.icon.up_control:before { content:"\f0d8"; }
+.icon.clear:before { content:"\f12d"; }
+.icon.edit:before { content:"\f040"; }

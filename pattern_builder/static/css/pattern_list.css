@@ -1,0 +1,44 @@
+#pattern_list .item.dragging {
+	background-color: rgba(0, 255, 0, 0.3);
+}
+#pattern_list .items {
+	width:19em;
+}
+#pattern_list .item {
+	width: 9em;
+	vertical-align: top;
+	box-sizing:border-box;
+	border: 1px solid #333;
+	padding:0.2em;
+	margin:0.1em;
+}
+#pattern_list .pattern_thumb {
+	width:auto;
+}
+#pattern_list .item label {
+	display: block;
+	padding:0;
+}
+#pattern_list .item .content_container {
+	width: auto;
+}
+#pattern_list .item .button_container {
+	position: absolute;
+	top:0;
+	right:0;
+}
+#pattern_list .item:nth-child(4n+4),
+#pattern_list .item:nth-child(4n+1) {
+	background-color:rgb(154, 189, 132);
+	border:1px solid rgb(199, 222, 184);
+}
+#pattern_list .item:nth-child(4n+2),
+#pattern_list .item:nth-child(4n+3) {
+	background-color:rgb(128, 175, 127);
+	border:1px solid rgb(183, 214, 163);
+}
+#pattern_list .item.selected {
+	border:1px solid rgb(239, 208, 120);
+	background-color: rgb(232, 139, 46);
+	box-shadow: inset 0 0 1em rgba(255, 255, 255, 0.3);
+}

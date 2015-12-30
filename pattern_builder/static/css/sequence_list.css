@@ -1,0 +1,17 @@
+#sequence_list .item {
+	background:rgb(177, 219, 245);
+	border:1px solid rgb(215, 237, 251);
+	margin:0.1em 0;
+}
+#sequence_list .item:nth-child(even) {
+	background:rgb(152, 188, 210);
+	border:1px solid rgb(189, 218, 234);
+}
+#sequence_list .item.selected {
+	border:1px solid rgb(239, 208, 120);
+	background-color: rgb(232, 139, 46);
+	box-shadow: inset 0 0 1em rgba(255, 255, 255, 0.3);
+}
+#sequence_list .item .content_container {
+	width:14em;
+}

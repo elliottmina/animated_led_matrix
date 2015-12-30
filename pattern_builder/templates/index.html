@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Dancing Problem pattern builder</title>
+	<style>
+		@font-face {
+			font-family: 'fontawesome';
+			src: url('/static/fonts/fontawesome-webfont.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Share Tech Mono';
+			src: url('/static/fonts/ShareTechMono-Regular.ttf') format('truetype');
+		}
+		* {
+			padding:0;
+			margin:0;
+		}
+		body {
+			font-size: 16px;
+			font-family: 'Share Tech Mono';
+			background-color: rgba(61, 56, 69, 1);
+		}
+		.container {
+			border-top:1px solid rgb(80, 80, 80);
+			border-bottom:1px solid rgb(80, 80, 80);
+			min-height: 20em;
+			min-width:64em;
+			margin-bottom: 1em;
+			margin-top:0.5em;
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+		.container>.content {
+			display: inline-block;
+			vertical-align: top;
+			padding:0.5em 0;
+		}
+		.container>.header {
+			width:1em;
+			word-break: break-all;
+			display: inline-block;
+			color:#333;
+			padding:0.5em 0.2em 0.4em 0.5em;
+			position: relative;
+			top:-0.1em;
+		}
+		input {
+			padding:0.6em;
+			font-size: 0.9em;
+			border:1px solid rgba(0, 0, 0, 0.5);
+			font-family: 'Share Tech Mono';
+		
+			background-color:rgba(255, 255, 255, 0.4);	
+			border:1px solid rgba(255, 255, 255, 0.5);
+			padding:0.3em;
+		}
+		button {
+			padding:0.4em;
+			font-size:1em;
+			border-radius: 0.2em;
+			cursor: pointer;
+			background-color:rgba(255, 255, 255, 0.6);
+			border:1px solid rgba(255, 255, 255, 0.7);
+		}
+		.items {
+			height:20em;
+			width:18em;
+		}
+		.filter_container {
+			margin-bottom: 0.5em;	
+		}
+		#pattern_editor .table_wrapper {
+			display: inline-block;
+			background-color:rgb(154, 189, 132);
+			border:1px solid rgb(199, 222, 184);
+			padding:0.2em 1em;
+			min-width: 37em;
+			min-height: 21em;
+		}
+		.filter_container .num_hidden {
+			display: none;
+		}
+		.pattern_table.preview {
+			background-color:rgba(255, 255, 255, 0.1);
+		}
+
+	</style>
+{% for path in css_paths %}
+	<link rel="stylesheet" type="text/css" href="{{ path }}">
+{% endfor %}
+	<script type="text/javascript" src="/static/js/vendor/jquery-2.1.4.min.js" defer></script>
+	<script type="text/javascript" src="/static/js/vendor/jquery.uuid.js" defer></script>
+{% for path in js_paths %}
+	<script src="{{ path }}" type="text/javascript" defer></script>
+{% endfor %}
+	<script type="text/javascript">
+		window.onload = function() {
+			new App({
+				patterns:{{ patterns|safe }},
+				sequences:{{ sequences|safe }}
+			});
+		};
+	</script>
+</head>
+<body>
+	<div id="pattern_container" class="container">
+		<div class="header">Patterns</div>
+		<div class="content">
+			<div id="pattern_list" class="item_list">
+				<div class="filter_container">
+					<input type="text" class="filter" placeholder="Filter" />
+					<button class="icon clear bare"></button>
+					<span class="num_hidden">(<span class="count"></span> hidden)</span>
+				</div>
+				<div class="items"></div>
+				<form class="add_container">
+					<input type="text" class="insert" placeholder="New pattern" />
+					<button class="icon add text">Add</button>
+				</form>
+			</div>
+			<div id="pattern_editor">
+				<input type="text" />
+				<div class="shift_buttons">
+					<button class="icon bare left_control"></button>
+					<button class="icon bare right_control"></button>
+					<button class="icon bare up_control"></button>
+					<button class="icon bare down_control"></button>
+				</div>
+				<div class="table_wrapper"></div>
+			</div>
+			<div id="color_picker">
+				<ul></ul>
+			</div>
+		</div>
+	</div>
+	<div id="sequence_container" class="container">
+		<div class="header">Sequences</div>
+		<div class="content">
+			<div id="sequence_list" class="item_list">
+				<div class="filter_container">
+					<input type="text" class="filter" placeholder="Filter" />
+					<button class="icon clear bare"></button>
+					<span class="num_hidden">(<span class="count"></span> hidden)</span>
+				</div>
+				<div class="items"></div>
+				<form class="add_container">
+					<input type="text" class="insert" placeholder="New sequence" />
+					<button class="icon add">Add</button>
+				</form>
+			</div>
+			<div id="sequence_editor">
+				<input type="text" class="sequence_label" />
+				<div id="sequence_pattern_editor"></div>
+				<div id="sequence_editor_preview">
+					<span class="graphic"></span>
+					<div class="controls">
+						<button class="1x">1x</button><button class="2x">2x</button><button class="3x">3x</button>
+					</div>
+				</div>
+				<div id="preview"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

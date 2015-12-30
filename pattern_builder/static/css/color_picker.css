@@ -1,0 +1,27 @@
+#color_picker {
+	display: inline-block;
+	position: relative;
+	top:3em;
+	color:#FFF;
+}
+#color_picker li {
+	display: block;
+	list-style: none;
+	cursor: pointer;
+	padding:0.3em;
+	border:1px solid transparent;
+	padding-right: 0.5em;
+}
+#color_picker li.selected {
+	border:1px solid rgb(239, 208, 120);
+	background-color: rgb(232, 139, 46);
+	color:#333;
+}
+#color_picker .sample {
+	height:1em;
+	width: 1em;
+	border:1px solid #ccc;
+	display: inline-block;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
