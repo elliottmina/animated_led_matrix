@@ -22,7 +22,7 @@ var App = function(initConfig) {
 			colors:colors
 		});
 		var patternEditor = new PatternEditor({
-			topContainer:$('#pattern_editor .table_wrapper'),
+			topContainer:$('#pattern_editor'),
 			patternApplier:patternApplier,
 			patternTableBuilder:patternTableBuilder,
 			patternShifter:patternShifter,
@@ -34,7 +34,8 @@ var App = function(initConfig) {
 			colorPicker:new ColorPicker({
 				topContainer:$('#color_picker'),
 				colors:colors
-			})
+			}),
+			dispatcher:dispatcher
 		});
 		var patternThumbFactory = new PatternThumbFactory({
 			dispatcher:dispatcher,
@@ -96,7 +97,8 @@ var App = function(initConfig) {
 			label:new ChangeAwareLabel({
 				topContainer:$('#sequence_editor .sequence_label')
 			}),
-			topContainer:$('#sequence_editor')
+			topContainer:$('#sequence_editor'),
+			dispatcher:dispatcher
 		});
 		var sequenceList = new SequenceList({
 			sequenceManager:sequenceManager,

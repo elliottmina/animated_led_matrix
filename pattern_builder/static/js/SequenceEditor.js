@@ -34,8 +34,8 @@ var SequenceEditor = function(initConfig) {
 	};
 
 	var registerForEvents = function() {
-		dispatcher.register(SequencePatternEditor.SEQUENCE_PATTERNS_CHANGED, save);
-		dispatcher.register(SequenceManager.SEQUENCE_DELETED, onSequenceDeleted);
+		initConfig.dispatcher.register(SequencePatternEditor.SEQUENCE_PATTERNS_CHANGED, save);
+		initConfig.dispatcher.register(SequenceManager.SEQUENCE_DELETED, onSequenceDeleted);
 	};
 
 	var save = function() {

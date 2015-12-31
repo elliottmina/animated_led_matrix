@@ -11,13 +11,12 @@ var PatternList = function(initConfig) {
 
 	var gatherDependencies = function() {
 		patternEditor = initConfig.patternEditor;
-		dispatcher = initConfig.dispatcher;
 		patternManager = initConfig.patternManager;
 		itemList = initConfig.itemList;
 	};
 
 	var registerForEvents = function() {
-		dispatcher.register(PatternList.REQUEST_EDIT_PATTERN, itemList.select);
+		initConfig.dispatcher.register(PatternList.REQUEST_EDIT_PATTERN, itemList.select);
 	};
 
 	var build = function() {

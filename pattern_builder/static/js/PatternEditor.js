@@ -8,11 +8,13 @@ var PatternEditor = function(initConfig) {
 	var table;
 	var tds;
 	var id;
+	var enabled = false;
 
 	var init = function() {
 		gatherDependencies();
 		build();
 		addBehavior();
+		registerForEvents();
 	};
 
 	var gatherDependencies = function() {
@@ -25,7 +27,8 @@ var PatternEditor = function(initConfig) {
 	};
 
 	var build = function() {
-		table = initConfig.patternTableBuilder.build(initConfig.topContainer);
+		table = initConfig.patternTableBuilder.build(
+			initConfig.topContainer.find('.table_wrapper'));
 		tds = initConfig.topContainer.find('td');
 	};
 
@@ -39,6 +42,10 @@ var PatternEditor = function(initConfig) {
 		label.setCallback(save);
 	};
 
+	var registerForEvents = function() {
+		initConfig.dispatcher.register(PatternManager.PATTERN_DELETED, onPatternDeleted);
+	};
+
 	var assignShiftBehavior = function(selector, direction) {
 		initConfig.topContainer.find(selector).click(function() { 
 			shift(direction);
@@ -46,6 +53,8 @@ var PatternEditor = function(initConfig) {
 	};
 
 	var shift = function(direction) {
+		if (!enabled) return;
+
 		var func = patternShifter[direction];
 		var newChars = func(getChars());
 		setChars(newChars);
@@ -53,6 +62,8 @@ var PatternEditor = function(initConfig) {
 	};
 
 	var applyColor = function() {
+		if (!enabled) return;
+
 		var color = colorPicker.getCurrentColor();
 		$(this)
 			.removeClass()
@@ -82,6 +93,13 @@ var PatternEditor = function(initConfig) {
 		return false;
 	};
 
+	var onPatternDeleted = function(deletedId) {
+		if (deletedId == id) {
+			enabled = false;
+			setChars([]);
+		}
+	};
+
 	init();
 
 	return {
@@ -90,6 +108,7 @@ var PatternEditor = function(initConfig) {
 			pattern = patternManager.get(id);
 			setChars(pattern.chars);
 			label.setValue(pattern.label);
+			enabled = true;
 		}
 	};
 };
