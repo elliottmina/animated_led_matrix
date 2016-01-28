@@ -12,6 +12,7 @@ The workflow is generally:
 3. Organize patterns into a sequence
 
 I have placed a short demo on YouTube.
+
 [![YouTube Demo](http://img.youtube.com/vi/50_QiZe9XAU/0.jpg)](http://www.youtube.com/watch?v=50_QiZe9XAU "Video Title")
 
 The tool requires Python3 with Flask, primarily to persist pattern and sequence data to disk.
